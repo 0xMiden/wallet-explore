@@ -37,14 +37,18 @@ const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0
 
 const isRecord = value => typeof value === 'object' && value !== null && !Array.isArray(value);
 
-/** An IP literal, a local name or a punycode label can pass for a host the user knows. */
+/**
+ * An IP literal, a local name or a punycode label can pass for a host the user knows.
+ * A domain keeps its trailing dot when parsed, and "localhost." still reaches this machine.
+ */
 export function isDisguisedHost(hostname) {
+  const host = hostname.endsWith('.') ? hostname.slice(0, -1) : hostname;
   return (
-    hostname.startsWith('[') ||
-    IPV4.test(hostname) ||
-    hostname === 'localhost' ||
-    hostname.endsWith('.localhost') ||
-    hostname.split('.').some(label => label.startsWith('xn--'))
+    host.startsWith('[') ||
+    IPV4.test(host) ||
+    host === 'localhost' ||
+    host.endsWith('.localhost') ||
+    host.split('.').some(label => label.startsWith('xn--'))
   );
 }
 
