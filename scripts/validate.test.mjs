@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { mkdirSync, mkdtempSync, readdirSync, readFileSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -6,6 +7,7 @@ import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 import {
+  baseText,
   EXPLORE_CATEGORIES,
   EXPLORE_LOCALES,
   EXPLORE_SECTION_KINDS,
@@ -246,5 +248,75 @@ describe('iconError', () => {
 
   it('refuses an image larger than 256x256', () => {
     assert.equal(iconError(rootWith('icons/a.png', png(512, 512)), 'icons/a.png'), 'icons/a.png is larger than 256x256');
+  });
+});
+
+describe('baseText and the base-ref version rule', () => {
+  const git = (root, ...args) =>
+    execFileSync('git', ['-c', 'commit.gpgsign=false', '-c', 'user.name=t', '-c', 'user.email=t@example.com', ...args], {
+      cwd: root,
+      stdio: ['ignore', 'pipe', 'ignore']
+    });
+  const document = (version, tagline) =>
+    JSON.stringify({
+      network: 'testnet',
+      version,
+      items: [
+        {
+          id: 'faucet',
+          name: { en: 'Faucet' },
+          tagline: { en: tagline },
+          url: 'https://faucet.example/',
+          category: 'tools',
+          icon: 'icons/faucet.png',
+          isExchange: false
+        }
+      ],
+      sections: []
+    });
+  // A repository whose main branch holds testnet.json at version 1.
+  const repoOnMain = () => {
+    const root = tempRoot();
+    git(root, 'init', '-b', 'main');
+    write(root, 'testnet.json', document(1, 'Get tokens'));
+    write(root, 'icons/faucet.png', png(64, 64));
+    git(root, 'add', '.');
+    git(root, 'commit', '-m', 'base');
+    return root;
+  };
+
+  it('returns no base when no ref is set', () => {
+    assert.equal(baseText('', 'testnet.json', repoOnMain()), null);
+    assert.equal(baseText(undefined, 'testnet.json', repoOnMain()), null);
+  });
+
+  it('returns the file as the ref holds it, and null for a file the ref lacks', () => {
+    const root = repoOnMain();
+    assert.equal(baseText('main', 'testnet.json', root), document(1, 'Get tokens'));
+    assert.equal(baseText('main', 'devnet.json', root), null);
+  });
+
+  it('throws for a ref that does not resolve, instead of reading it as a new file', () => {
+    assert.throws(() => baseText('origin/does-not-exist', 'testnet.json', repoOnMain()), /does not resolve to a commit/);
+  });
+
+  it('fails validateFile closed on an unresolvable ref, and passes the same file on a resolvable one that is a new file', () => {
+    const root = repoOnMain();
+    write(root, 'testnet.json', document(1, 'Changed tagline'));
+    assert.deepEqual(validateFile('testnet.json', { root, baseRef: 'origin/does-not-exist' }).errors, [
+      'BASE_REF origin/does-not-exist does not resolve to a commit, so the version rule cannot run'
+    ]);
+    write(root, 'devnet.json', document(1, 'Get tokens').replace('testnet', 'devnet'));
+    assert.deepEqual(validateFile('devnet.json', { root, baseRef: 'main' }).errors, []);
+  });
+
+  it('requires a higher version for a changed file against a resolvable ref', () => {
+    const root = repoOnMain();
+    write(root, 'testnet.json', document(1, 'Changed tagline'));
+    assert.match(validateFile('testnet.json', { root, baseRef: 'main' }).errors[0], /greater than 1/);
+    write(root, 'testnet.json', document(2, 'Changed tagline'));
+    assert.deepEqual(validateFile('testnet.json', { root, baseRef: 'main' }).errors, []);
+    write(root, 'testnet.json', document(1, 'Get tokens'));
+    assert.deepEqual(validateFile('testnet.json', { root, baseRef: 'main' }).errors, []);
   });
 });

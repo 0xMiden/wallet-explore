@@ -257,8 +257,20 @@ export function iconError(root, icon) {
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-function baseText(baseRef, file, root) {
+/**
+ * `file` as `baseRef` holds it, or null when the file is new there. An unresolvable `baseRef` throws, so the
+ * version rule fails closed instead of being skipped by a mistyped or unfetched ref.
+ */
+export function baseText(baseRef, file, root) {
   if (!baseRef) return null;
+  try {
+    execFileSync('git', ['rev-parse', '--verify', '--quiet', `${baseRef}^{commit}`], {
+      cwd: root,
+      stdio: ['ignore', 'ignore', 'ignore']
+    });
+  } catch {
+    throw new Error(`BASE_REF ${baseRef} does not resolve to a commit, so the version rule cannot run`);
+  }
   try {
     return execFileSync('git', ['show', `${baseRef}:${file}`], {
       cwd: root,
@@ -266,7 +278,7 @@ function baseText(baseRef, file, root) {
       stdio: ['ignore', 'pipe', 'ignore']
     });
   } catch {
-    return null; // a new file has no base
+    return null; // a resolvable ref that lacks the file: a new file has no base
   }
 }
 
@@ -288,8 +300,12 @@ export function validateFile(file, { baseRef, root = REPO_ROOT } = {}) {
   errors.push(...parsed.errors);
   notes.push(...parsed.dropped.map(reason => `dropped: ${reason}`));
   if (parsed.catalog === null) return { errors, notes };
-  const bump = versionError(text, parsed.catalog.version, baseText(baseRef, file, root));
-  if (bump !== null) errors.push(bump);
+  try {
+    const bump = versionError(text, parsed.catalog.version, baseText(baseRef, file, root));
+    if (bump !== null) errors.push(bump);
+  } catch (error) {
+    errors.push(error.message);
+  }
   // Every item's icon, a left-out item's too: a wallet that knows its category draws it.
   for (const icon of new Set(body.items.map(item => item.icon).filter(icon => icon !== undefined))) {
     const problem = iconError(root, icon);
