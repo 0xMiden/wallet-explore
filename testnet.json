@@ -1,6 +1,6 @@
 {
   "network": "testnet",
-  "version": 2,
+  "version": 3,
   "items": [
     {
       "id": "faucet",
@@ -69,6 +69,21 @@
       "icon": "icons/where-legends-grow.png",
       "brandColor": "#07101F",
       "isExchange": false
+    },
+    {
+      "id": "notecheck",
+      "name": {
+        "en": "NoteCheck"
+      },
+      "tagline": {
+        "en": "Pay privately and share a receipt link the other side can verify on chain. Plus developer tools.",
+        "tr": "Özel ödeme yap, karşı tarafın zincirde doğrulayabileceği bir makbuz linki paylaş. Geliştirici araçları da var."
+      },
+      "url": "https://notecheck-miden.vercel.app/",
+      "category": "tools",
+      "icon": "icons/notecheck.png",
+      "brandColor": "#3B2FC9",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -112,7 +127,7 @@
         "zh_CN": "辅助工具",
         "zh_TW": "輔助工具"
       },
-      "itemIds": ["faucet", "forkchoice-faucet"]
+      "itemIds": ["faucet", "forkchoice-faucet", "notecheck"]
     },
     {
       "id": "games",
