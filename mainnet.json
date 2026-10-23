@@ -1,6 +1,45 @@
 {
   "network": "mainnet",
-  "version": 1,
-  "items": [],
-  "sections": []
+  "version": 2,
+  "items": [
+    {
+      "id": "geoquizz",
+      "name": {
+        "en": "GeoQuizz"
+      },
+      "tagline": {
+        "en": "Find ten cities on the map, then post your record for rivals to beat for Gamecoins"
+      },
+      "url": "https://gq-thegamenotthemagazine.app/",
+      "category": "games",
+      "icon": "icons/geoquizz.png",
+      "brandColor": "#0C0827",
+      "isExchange": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "games",
+      "kind": "list",
+      "title": {
+        "en": "Games",
+        "de": "Spiele",
+        "en_GB": "Games",
+        "es": "Juegos",
+        "fr": "Jeux",
+        "ja": "ゲーム",
+        "ko": "게임",
+        "pl": "Gry",
+        "pt": "Jogos",
+        "ru": "Игры",
+        "tr": "Oyunlar",
+        "uk": "Ігри",
+        "zh_CN": "游戏",
+        "zh_TW": "遊戲"
+      },
+      "itemIds": [
+        "geoquizz"
+      ]
+    }
+  ]
 }
