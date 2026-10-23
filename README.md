@@ -45,6 +45,17 @@ symbolic link in its path. The whole document stays within 32 KiB, the most a wa
 
 ## Publishing
 
+### Initial Partner Mainnet catalog
+
+`mainnet.json` starts at version 1 with no items or sections. The initial approved app list,
+production entry URLs and Mainnet readiness still need confirmation; Testnet listings are not
+evidence of Mainnet support. Do not copy Testnet faucets into this document.
+
+Before adding a partner, confirm its production entry URL, Mainnet integration readiness and
+approved display name/tagline/category. Use an existing accurate icon when available (or omit
+the optional icon), set `isExchange` explicitly, and reference its unique item ID from the
+appropriate `featured` or `list` section. Bump the Mainnet version when populating the catalog.
+
 1. Edit the document and bump `version`. Going back to an older catalog is a new, higher version too.
 2. Open a pull request. `validate` checks the document against the wallet's own rules, the version
    bump against `main`, the document size and every icon.
