@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 3,
+  "version": 4,
   "items": [
     {
       "id": "geoquizz",
@@ -29,6 +29,20 @@
       "icon": "icons/pick-up-boomers.png",
       "brandColor": "#080c24",
       "isExchange": false
+    },
+    {
+      "id": "miden-name",
+      "name": {
+        "en": "Miden Name"
+      },
+      "tagline": {
+        "en": "Register and manage your .miden name on Miden"
+      },
+      "url": "https://miden.name/",
+      "category": "tools",
+      "icon": "icons/miden-name.png",
+      "brandColor": "#0E1210",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -54,6 +68,16 @@
       "itemIds": [
         "geoquizz",
         "pick-up-boomers"
+      ]
+    },
+    {
+      "id": "tools",
+      "kind": "list",
+      "title": {
+        "en": "Tools"
+      },
+      "itemIds": [
+        "miden-name"
       ]
     }
   ]
