@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 2,
+  "version": 3,
   "items": [
     {
       "id": "geoquizz",
@@ -14,6 +14,20 @@
       "category": "games",
       "icon": "icons/geoquizz.png",
       "brandColor": "#0C0827",
+      "isExchange": false
+    },
+    {
+      "id": "pick-up-boomers",
+      "name": {
+        "en": "Pick Up Boomers"
+      },
+      "tagline": {
+        "en": "Three minutes, one track: pick up boomers and drop them where they want, then post your record for rivals to beat"
+      },
+      "url": "https://www.pickupboomers.app/",
+      "category": "games",
+      "icon": "icons/pick-up-boomers.png",
+      "brandColor": "#080c24",
       "isExchange": false
     }
   ],
@@ -38,7 +52,8 @@
         "zh_TW": "遊戲"
       },
       "itemIds": [
-        "geoquizz"
+        "geoquizz",
+        "pick-up-boomers"
       ]
     }
   ]
