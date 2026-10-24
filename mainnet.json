@@ -1,7 +1,21 @@
 {
   "network": "mainnet",
-  "version": 2,
+  "version": 3,
   "items": [
+    {
+      "id": "geoquizz",
+      "name": {
+        "en": "GeoQuizz"
+      },
+      "tagline": {
+        "en": "Find ten cities on the map, then post your record for rivals to beat for Gamecoins"
+      },
+      "url": "https://gq-thegamenotthemagazine.app/",
+      "category": "games",
+      "icon": "icons/geoquizz.png",
+      "brandColor": "#0C0827",
+      "isExchange": false
+    },
     {
       "id": "pick-up-boomers",
       "name": {
@@ -38,6 +52,7 @@
         "zh_TW": "遊戲"
       },
       "itemIds": [
+        "geoquizz",
         "pick-up-boomers"
       ]
     }
