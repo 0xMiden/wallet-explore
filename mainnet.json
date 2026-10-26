@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 5,
+  "version": 6,
   "items": [
     {
       "id": "geoquizz",
@@ -42,6 +42,21 @@
       "category": "tools",
       "icon": "icons/miden-name.png",
       "brandColor": "#0E1210",
+      "isExchange": false
+    },
+    {
+      "id": "notecheck",
+      "name": {
+        "en": "NoteCheck"
+      },
+      "tagline": {
+        "en": "Pay privately and share a receipt link the other side can verify on chain. Plus developer tools.",
+        "tr": "Özel ödeme yap, karşı tarafın zincirde doğrulayabileceği bir makbuz linki paylaş. Geliştirici araçları da var."
+      },
+      "url": "https://notecheck-miden.vercel.app/?net=mainnet",
+      "category": "tools",
+      "icon": "icons/notecheck.png",
+      "brandColor": "#3B2FC9",
       "isExchange": false
     },
     {
@@ -112,7 +127,8 @@
         "en": "Tools"
       },
       "itemIds": [
-        "miden-name"
+        "miden-name",
+        "notecheck"
       ]
     }
   ]
