@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 6,
+  "version": 7,
   "items": [
     {
       "id": "geoquizz",
@@ -84,6 +84,20 @@
       "icon": "icons/qash.png",
       "brandColor": "#06FFB4",
       "isExchange": false
+    },
+    {
+      "id": "the-clock-is-ticking",
+      "name": {
+        "en": "The Clock Is Ticking"
+      },
+      "tagline": {
+        "en": "Buy a key, push back the clock, be the last buyer when time runs out. The last key takes the whole pot."
+      },
+      "url": "https://theclockisticking.xyz/",
+      "category": "games",
+      "icon": "icons/the-clock-is-ticking.png",
+      "brandColor": "#10100F",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -93,7 +107,9 @@
       "title": {
         "en": "DeFi"
       },
-      "itemIds": ["port0"]
+      "itemIds": [
+        "port0"
+      ]
     },
     {
       "id": "games",
@@ -116,7 +132,8 @@
       },
       "itemIds": [
         "geoquizz",
-        "pick-up-boomers"
+        "pick-up-boomers",
+        "the-clock-is-ticking"
       ]
     },
     {
