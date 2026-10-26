@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 7,
+  "version": 8,
   "items": [
     {
       "id": "geoquizz",
@@ -97,6 +97,19 @@
       "category": "games",
       "brandColor": "#DEDBEA",
       "isExchange": false
+    },
+    {
+      "id": "jockey-jockey",
+      "name": {
+        "en": "Jockey Jockey"
+      },
+      "tagline": {
+        "en": "Build a horse. Watch it race. Blame the horse."
+      },
+      "url": "https://jockeyjockey.xyz/",
+      "category": "games",
+      "brandColor": "#203E35",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -130,7 +143,8 @@
       "itemIds": [
         "geoquizz",
         "pick-up-boomers",
-        "flappy-loaf"
+        "flappy-loaf",
+        "jockey-jockey"
       ]
     },
     {
