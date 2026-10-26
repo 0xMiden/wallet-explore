@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 8,
+  "version": 9,
   "items": [
     {
       "id": "geoquizz",
@@ -94,6 +94,7 @@
         "en": "Tap to fly. Dodge rolling pins. Beat a friend's flight."
       },
       "url": "https://flappyloaf.xyz/",
+      "icon": "icons/flappy-loaf.png",
       "category": "games",
       "brandColor": "#DEDBEA",
       "isExchange": false
@@ -107,6 +108,7 @@
         "en": "Build a horse. Watch it race. Blame the horse."
       },
       "url": "https://jockeyjockey.xyz/",
+      "icon": "icons/jockey-jockey.png",
       "category": "games",
       "brandColor": "#203E35",
       "isExchange": false
