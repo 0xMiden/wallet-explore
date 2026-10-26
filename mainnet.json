@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 6,
+  "version": 7,
   "items": [
     {
       "id": "geoquizz",
@@ -84,6 +84,19 @@
       "icon": "icons/qash.png",
       "brandColor": "#06FFB4",
       "isExchange": false
+    },
+    {
+      "id": "flappy-loaf",
+      "name": {
+        "en": "Flappy Loaf"
+      },
+      "tagline": {
+        "en": "Tap to fly. Dodge rolling pins. Beat a friend's flight."
+      },
+      "url": "https://flappyloaf.xyz/",
+      "category": "games",
+      "brandColor": "#DEDBEA",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -116,7 +129,8 @@
       },
       "itemIds": [
         "geoquizz",
-        "pick-up-boomers"
+        "pick-up-boomers",
+        "flappy-loaf"
       ]
     },
     {
