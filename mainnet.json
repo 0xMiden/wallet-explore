@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 5,
+  "version": 6,
   "items": [
     {
       "id": "geoquizz",
@@ -70,6 +70,20 @@
       "icon": "icons/port0.png",
       "brandColor": "#F200B9",
       "isExchange": true
+    },
+    {
+      "id": "qash",
+      "name": {
+        "en": "Qash"
+      },
+      "tagline": {
+        "en": "Private neobank for global teams: run payroll, pay invoices and move money without exposing balances onchain."
+      },
+      "url": "https://app.qash.finance/",
+      "category": "tools",
+      "icon": "icons/qash.png",
+      "brandColor": "#06FFB4",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -112,7 +126,8 @@
         "en": "Tools"
       },
       "itemIds": [
-        "miden-name"
+        "miden-name",
+        "qash"
       ]
     }
   ]
