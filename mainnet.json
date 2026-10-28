@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 7,
+  "version": 10,
   "items": [
     {
       "id": "geoquizz",
@@ -86,6 +86,34 @@
       "isExchange": false
     },
     {
+      "id": "flappy-loaf",
+      "name": {
+        "en": "Flappy Loaf"
+      },
+      "tagline": {
+        "en": "Tap to fly. Dodge rolling pins. Beat a friend's flight."
+      },
+      "url": "https://flappyloaf.xyz/",
+      "icon": "icons/flappy-loaf.png",
+      "category": "games",
+      "brandColor": "#DEDBEA",
+      "isExchange": false
+    },
+    {
+      "id": "jockey-jockey",
+      "name": {
+        "en": "Jockey Jockey"
+      },
+      "tagline": {
+        "en": "Build a horse. Watch it race. Blame the horse."
+      },
+      "url": "https://jockeyjockey.xyz/",
+      "icon": "icons/jockey-jockey.png",
+      "category": "games",
+      "brandColor": "#203E35",
+      "isExchange": false
+    },
+    {
       "id": "the-clock-is-ticking",
       "name": {
         "en": "The Clock Is Ticking"
@@ -133,6 +161,8 @@
       "itemIds": [
         "geoquizz",
         "pick-up-boomers",
+        "flappy-loaf",
+        "jockey-jockey",
         "the-clock-is-ticking"
       ]
     },
