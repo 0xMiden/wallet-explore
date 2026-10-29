@@ -45,6 +45,21 @@
       "isExchange": false
     },
     {
+      "id": "notecheck",
+      "name": {
+        "en": "NoteCheck"
+      },
+      "tagline": {
+        "en": "Pay privately and share a receipt link the other side can verify on chain. Plus developer tools.",
+        "tr": "Özel ödeme yap, karşı tarafın zincirde doğrulayabileceği bir makbuz linki paylaş. Geliştirici araçları da var."
+      },
+      "url": "https://notecheck-miden.vercel.app/?net=mainnet",
+      "category": "tools",
+      "icon": "icons/notecheck.png",
+      "brandColor": "#3B2FC9",
+      "isExchange": false
+    },
+    {
       "id": "port0",
       "name": {
         "en": "port0.sh"
@@ -174,7 +189,8 @@
       },
       "itemIds": [
         "miden-name",
-        "qash"
+        "qash",
+        "notecheck"
       ]
     }
   ]
