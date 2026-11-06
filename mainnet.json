@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 10,
+  "version": 11,
   "items": [
     {
       "id": "geoquizz",
@@ -126,6 +126,20 @@
       "icon": "icons/the-clock-is-ticking.png",
       "brandColor": "#10100F",
       "isExchange": false
+    },
+    {
+      "id": "darwin",
+      "name": {
+        "en": "Darwin"
+      },
+      "tagline": {
+        "en": "Own crypto and tokenized stocks through one private token."
+      },
+      "url": "https://app.darwin.market/",
+      "category": "defi",
+      "icon": "icons/darwin.png",
+      "brandColor": "#B08C45",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -136,7 +150,8 @@
         "en": "DeFi"
       },
       "itemIds": [
-        "port0"
+        "port0",
+        "darwin"
       ]
     },
     {
