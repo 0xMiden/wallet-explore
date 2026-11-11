@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 10,
+  "version": 12,
   "items": [
     {
       "id": "geoquizz",
@@ -127,6 +127,34 @@
       "category": "games",
       "brandColor": "#203E35",
       "isExchange": false
+    },
+    {
+      "id": "the-clock-is-ticking",
+      "name": {
+        "en": "The Clock Is Ticking"
+      },
+      "tagline": {
+        "en": "Buy a key, push back the clock, be the last buyer when time runs out. The last key takes the whole pot."
+      },
+      "url": "https://theclockisticking.xyz/",
+      "category": "games",
+      "icon": "icons/the-clock-is-ticking.png",
+      "brandColor": "#10100F",
+      "isExchange": false
+    },
+    {
+      "id": "darwin",
+      "name": {
+        "en": "Darwin"
+      },
+      "tagline": {
+        "en": "Own crypto and tokenized stocks through one private token."
+      },
+      "url": "https://app.darwin.market/",
+      "category": "defi",
+      "icon": "icons/darwin.png",
+      "brandColor": "#B08C45",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -136,7 +164,10 @@
       "title": {
         "en": "DeFi"
       },
-      "itemIds": ["port0"]
+      "itemIds": [
+        "port0",
+        "darwin"
+      ]
     },
     {
       "id": "games",
@@ -161,7 +192,8 @@
         "geoquizz",
         "pick-up-boomers",
         "flappy-loaf",
-        "jockey-jockey"
+        "jockey-jockey",
+        "the-clock-is-ticking"
       ]
     },
     {
