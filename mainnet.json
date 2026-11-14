@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 13,
+  "version": 14,
   "items": [
     {
       "id": "geoquizz",
@@ -228,10 +228,10 @@
       "itemIds": [
         "geoquizz",
         "pick-up-boomers",
+        "where-legends-grow",
         "flappy-loaf",
         "jockey-jockey",
-        "the-clock-is-ticking",
-        "where-legends-grow"
+        "the-clock-is-ticking"
       ]
     },
     {
