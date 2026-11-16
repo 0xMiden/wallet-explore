@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 6,
+  "version": 13,
   "items": [
     {
       "id": "geoquizz",
@@ -22,7 +22,7 @@
         "en": "Pick Up Boomers"
       },
       "tagline": {
-        "en": "Three minutes, one track: pick up boomers and drop them where they want, then post your record for rivals to beat"
+        "en": "Pick up boomers, drop them off, then beat your rivals' record"
       },
       "url": "https://www.pickupboomers.app/",
       "category": "games",
@@ -84,16 +84,127 @@
       "icon": "icons/qash.png",
       "brandColor": "#06FFB4",
       "isExchange": false
+    },
+    {
+      "id": "flappy-loaf",
+      "name": {
+        "en": "Flappy Loaf"
+      },
+      "tagline": {
+        "en": "Tap to fly. Dodge rolling pins. Beat a friend's flight."
+      },
+      "url": "https://flappyloaf.xyz/",
+      "icon": "icons/flappy-loaf.png",
+      "category": "games",
+      "brandColor": "#DEDBEA",
+      "isExchange": false
+    },
+    {
+      "id": "jockey-jockey",
+      "name": {
+        "en": "Jockey Jockey"
+      },
+      "tagline": {
+        "en": "Build a horse. Watch it race. Blame the horse."
+      },
+      "url": "https://jockeyjockey.xyz/",
+      "icon": "icons/jockey-jockey.png",
+      "category": "games",
+      "brandColor": "#203E35",
+      "isExchange": false
+    },
+    {
+      "id": "the-clock-is-ticking",
+      "name": {
+        "en": "The Clock Is Ticking"
+      },
+      "tagline": {
+        "en": "Buy a key, push back the clock, be the last buyer when time runs out. The last key takes the whole pot."
+      },
+      "url": "https://theclockisticking.xyz/",
+      "category": "games",
+      "icon": "icons/the-clock-is-ticking.png",
+      "brandColor": "#10100F",
+      "isExchange": false
+    },
+    {
+      "id": "darwin",
+      "name": {
+        "en": "Darwin"
+      },
+      "tagline": {
+        "en": "Own crypto and tokenized stocks through one private token."
+      },
+      "url": "https://app.darwin.market/",
+      "category": "defi",
+      "icon": "icons/darwin.png",
+      "brandColor": "#B08C45",
+      "isExchange": false
+    },
+    {
+      "id": "where-legends-grow",
+      "name": {
+        "en": "Where Legends Grow"
+      },
+      "tagline": {
+        "en": "Build a football club, train your squad and play matches",
+        "de": "Fußballverein aufbauen, Kader trainieren und Spiele bestreiten",
+        "en_GB": "Build a football club, train your squad and play matches",
+        "es": "Crea un club de fútbol, entrena a tu plantilla y juega partidos",
+        "fr": "Créez un club de football, entraînez votre effectif et jouez des matchs",
+        "ja": "サッカークラブを作り、選手を育てて試合に挑む",
+        "ko": "축구 클럽을 만들고 선수단을 훈련시켜 경기하기",
+        "pl": "Zbuduj klub piłkarski, trenuj kadrę i rozgrywaj mecze",
+        "pt": "Crie um clube de futebol, treine seu elenco e dispute partidas",
+        "ru": "Создайте футбольный клуб, тренируйте команду и проводите матчи",
+        "tr": "Bir futbol kulübü kurun, kadronuzu çalıştırın ve maçlara çıkın",
+        "uk": "Створіть футбольний клуб, тренуйте команду та проводьте матчі",
+        "zh_CN": "组建足球俱乐部，训练球队并参加比赛",
+        "zh_TW": "組建足球俱樂部，訓練球隊並參加比賽"
+      },
+      "url": "https://wherelegendsgrow.com/",
+      "category": "games",
+      "icon": "icons/where-legends-grow.png",
+      "brandColor": "#07101F",
+      "isExchange": false
     }
   ],
   "sections": [
+    {
+      "id": "featured",
+      "kind": "featured",
+      "title": {
+        "en": "Featured",
+        "de": "Empfohlen",
+        "en_GB": "Featured",
+        "es": "Destacado",
+        "fr": "À la une",
+        "ja": "おすすめ",
+        "ko": "추천",
+        "pl": "Polecane",
+        "pt": "Destaque",
+        "ru": "Рекомендуем",
+        "tr": "Öne çıkan",
+        "uk": "Рекомендоване",
+        "zh_CN": "精选",
+        "zh_TW": "精選"
+      },
+      "itemIds": [
+        "darwin",
+        "miden-name",
+        "pick-up-boomers"
+      ]
+    },
     {
       "id": "defi",
       "kind": "list",
       "title": {
         "en": "DeFi"
       },
-      "itemIds": ["port0"]
+      "itemIds": [
+        "port0",
+        "darwin"
+      ]
     },
     {
       "id": "games",
@@ -116,7 +227,11 @@
       },
       "itemIds": [
         "geoquizz",
-        "pick-up-boomers"
+        "pick-up-boomers",
+        "flappy-loaf",
+        "jockey-jockey",
+        "the-clock-is-ticking",
+        "where-legends-grow"
       ]
     },
     {
