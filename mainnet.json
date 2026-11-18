@@ -1,6 +1,6 @@
 {
   "network": "mainnet",
-  "version": 13,
+  "version": 14,
   "items": [
     {
       "id": "geoquizz",
@@ -167,6 +167,19 @@
       "icon": "icons/where-legends-grow.png",
       "brandColor": "#07101F",
       "isExchange": false
+    },
+    {
+      "id": "bridge-portal",
+      "name": {
+        "en": "Miden Bridge"
+      },
+      "tagline": {
+        "en": "Move assets to and from Miden"
+      },
+      "url": "https://bridge.miden.xyz/",
+      "category": "tools",
+      "icon": "icons/bridge-portal.png",
+      "isExchange": false
     }
   ],
   "sections": [
@@ -242,7 +255,8 @@
       },
       "itemIds": [
         "miden-name",
-        "qash"
+        "qash",
+        "bridge-portal"
       ]
     }
   ]
